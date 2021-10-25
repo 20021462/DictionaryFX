@@ -1,0 +1,55 @@
+.search-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.transparent{
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.search-button{
+    -fx-background-color: #E69C42;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color: #333333;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10.0, 0.0, 0.0, 10.0);
+}
+
+.banner{
+    -fx-background-color: #333333;
+}
+
+.add-remove-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.search-bar{
+    -fx-background-color: #252525;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.search-word{
+    -fx-background-color: #E69C42;
+    -fx-text-fill: WHITE;
+}
+
