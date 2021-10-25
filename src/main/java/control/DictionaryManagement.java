@@ -106,7 +106,7 @@ public class DictionaryManagement {
                 String b = fileScanner.nextLine();
                 if (b.charAt(0) == '@') {
                     if (permit){
-                        dict.add(wordTarget,wordSound,wordExplain);
+                        dict.getWords().add(new Word(wordTarget,wordSound,wordExplain));
                         wordExplain="";
                     }
                     if (!permit) permit=true;
@@ -126,7 +126,7 @@ public class DictionaryManagement {
                     wordExplain = wordExplain.concat(b+'\n');
                 }
             }
-            dict.add(wordTarget,wordSound,wordExplain);
+            dict.getWords().add(new Word(wordTarget,wordSound,wordExplain));
             fileScanner.close();
         } catch (IOException e) {
             System.out.println("An import error occurred.");

@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -40,63 +42,174 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="44.0" prefWidth="210.0" stylesheets="@style.css">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  <TabPane prefWidth="250.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                    <tabs>
+                      <Tab text="Search">
+                           <content>
+                              <VBox prefWidth="220.0" style="-fx-background-color: #2A2A2A;">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="44.0" stylesheets="@style.css">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <TextField fx:id="searchBar" onKeyTyped="#searchButtonClicked" prefHeight="31.0" prefWidth="134.0" promptText="Type here to search" styleClass="search-box" stylesheets="@style.css">
+                                             <font>
+                                                <Font name="Cambria" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fx:id="searchButton" fitHeight="36.0" fitWidth="31.0" onMouseClicked="#searchButtonClicked" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@search.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets bottom="1.0" left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="search-box" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                    </HBox>
+                                    <HBox alignment="TOP_CENTER" prefWidth="250.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Button mnemonicParsing="false" onMouseClicked="#removeButtonClicked" prefWidth="70.0" styleClass="search-button" stylesheets="@style.css" text="Remove" textFill="WHITE" />
+                                          <Button mnemonicParsing="false" onMouseClicked="#saveButtonClicked" prefWidth="70.0" styleClass="search-button" stylesheets="@style.css" text="Save" textFill="WHITE">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <ScrollPane hbarPolicy="NEVER" styleClass="search-bar" stylesheets="@style.css" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" left="15.0" right="15.0" top="15.0" />
+                                       </VBox.margin>
+                                       <content>
+                                          <GridPane fx:id="searchGrid" prefHeight="0.0" prefWidth="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                      </Tab>
+                      <Tab text="Add">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #2A2A2A;">
+                                 <children>
+                                    <Label text="Word : " textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="wordTargetInput" promptText="word target">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Cambria" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label text="Pronoun : " textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="wordSoundInput" promptText="word sound">
+                                       <font>
+                                          <Font name="Cambria" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Meaning : " textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextArea fx:id="wordExplainInput" prefWidth="200.0" promptText="word explain" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Cambria" size="14.0" />
+                                       </font>
+                                    </TextArea>
+                                    <Button mnemonicParsing="false" onMouseClicked="#addButtonClicked" prefWidth="60.0" styleClass="search-button" stylesheets="@style.css" text="OK" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="150.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </content>
+                      </Tab>
+                        <Tab text="Translate">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #2A2A2A;">
+                                 <children>
+                                    <Label text="Translate En - Vi : " textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextArea fx:id="wordTranslateInput" promptText="input" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Cambria" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                    <Button mnemonicParsing="false" onMouseClicked="#translate" prefWidth="70.0" styleClass="search-button" stylesheets="@style.css" text="Translate" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="140.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <TextArea fx:id="wordTranslateOutput" editable="false" promptText="output" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Cambria" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                    </tabs>
                      <VBox.margin>
-                        <Insets left="20.0" right="20.0" />
+                        <Insets bottom="15.0" left="15.0" right="15.0" />
                      </VBox.margin>
-                     <children>
-                        <TextField fx:id="searchBar" onKeyTyped="#searchButtonClicked" prefHeight="31.0" prefWidth="143.0" promptText="Type here to search" styleClass="search-box" stylesheets="@style.css">
-                           <font>
-                              <Font name="Cambria" size="13.0" />
-                           </font>
-                        </TextField>
-                        <ImageView fx:id="searchButton" fitHeight="36.0" fitWidth="31.0" onMouseClicked="#searchButtonClicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@search.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="1.0" left="17.0" />
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                     <styleClass>
-                        <String fx:value="search-box" />
-                        <String fx:value="shadow" />
-                     </styleClass>
-                  </HBox>
-                  <HBox alignment="TOP_CENTER" prefWidth="250.0">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                     <children>
-                        <Button mnemonicParsing="false" prefWidth="60.0" styleClass="search-button" stylesheets="@style.css" text="Add" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="removeButton" mnemonicParsing="false" onMouseClicked="#removeButtonClicked" prefWidth="60.0" styleClass="search-button" stylesheets="@style.css" text="Remove" textFill="WHITE" />
-                        <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#saveButtonClicked" prefWidth="60.0" styleClass="search-button" stylesheets="@style.css" text="Save" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="250.0" prefWidth="220.0" styleClass="search-bar" stylesheets="@style.css" VBox.vgrow="ALWAYS">
-                     <VBox.margin>
-                        <Insets bottom="25.0" left="15.0" right="15.0" top="15.0" />
-                     </VBox.margin>
-                     <content>
-                        <GridPane fx:id="searchGrid" prefHeight="0.0" prefWidth="0.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
+                  </TabPane>
                </children>
             </VBox>
          </left>
