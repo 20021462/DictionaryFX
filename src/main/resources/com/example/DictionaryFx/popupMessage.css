@@ -1,0 +1,22 @@
+.background {
+    -fx-background-color: #333333;
+}
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #515151;
+}
+
+.button{
+    -fx-background-color: WHITE;
+    -fx-font-size: 12;
+    -fx-text-fill: BLACK;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.remove-button {
+    -fx-background-color: #DA4453;
+    -fx-text-fill: WHITE;
+}

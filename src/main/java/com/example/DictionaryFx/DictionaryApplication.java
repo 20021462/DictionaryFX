@@ -12,14 +12,16 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class DictionaryApplication extends Application {
+    public static Stage primaryStage = new Stage();
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(DictionaryApplication.class.getResource("Dictionary.fxml"));
-        stage.setTitle("Unfriendly Dictionary");
-        stage.setScene(new Scene(fxmlLoader.load()));
-        stage.getIcons().add(new Image(DictionaryApplication.class.getResourceAsStream("dictionary.png")));
+        primaryStage.setTitle("Unfriendly Dictionary");
+        primaryStage.setScene(new Scene(fxmlLoader.load()));
+        primaryStage.getIcons().add(new Image(DictionaryApplication.class.getResourceAsStream("dictionary.png")));
         //stage.setResizable(false);
-        stage.show();
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

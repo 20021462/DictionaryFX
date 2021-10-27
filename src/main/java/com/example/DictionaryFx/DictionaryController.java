@@ -16,6 +16,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Dictionary;
 import model.Word;
@@ -25,16 +27,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class DictionaryController implements Initializable {
-    private static Dictionary dict = new Dictionary();
+    public static Dictionary dict = new Dictionary();
 
     public static Word word;
-
-    private Stage stage;
-    private Scene scene;
 
     private MyListener myListener = new MyListener() {
         @Override
@@ -61,21 +61,6 @@ public class DictionaryController implements Initializable {
     @FXML
     private ImageView speakerButton;
 
-    @FXML
-    private TextArea wordExplainInput;
-
-    @FXML
-    private TextField wordSoundInput;
-
-    @FXML
-    private TextField wordTargetInput;
-
-    @FXML
-    private TextArea wordTranslateInput;
-
-    @FXML
-    private TextArea wordTranslateOutput;
-
 
     private void setChosenWord(Word word) {
         chosenWordTarget.setText(word.getWordTarget());
@@ -86,20 +71,63 @@ public class DictionaryController implements Initializable {
 
     @FXML
     private void addButtonClicked() {
-        String wordTarget = wordTargetInput.getText();
-        String wordSound = wordSoundInput.getText();
-        String wordExplain = wordExplainInput.getText();
-        if (wordTarget.equals("")) return;
-        dict.add(wordTarget, wordSound, wordExplain);
-        searchButtonClicked();
+//        String wordTarget = wordTargetInput.getText();
+//        String wordSound = wordSoundInput.getText();
+//        String wordExplain = wordExplainInput.getText();
+//        if (wordTarget.equals("")) return;
+//        dict.add(wordTarget, wordSound, wordExplain);
+//        searchButtonClicked();
     }
 
     @FXML
-    private void removeButtonClicked() {
-        int[] arr = DictionaryCommandline.dictionarySearcher(dict, word.getWordTarget());
-        dict.remove(arr[0]);
-        searchButtonClicked();
-        System.out.println(dict.getWords().size());
+    private void editButtonClicked() throws IOException {
+        if (word == null) return;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Edit.fxml"));
+        Parent root = fxmlLoader.load();
+        EditController editController = fxmlLoader.getController();
+        editController.setWordEdit(word);
+        Scene secondScene = new Scene(root);
+        Stage newWindow = new Stage();
+        newWindow.setTitle("Edit");
+        newWindow.getIcons().add(new Image(Objects.requireNonNull(DictionaryApplication.class.getResourceAsStream("dictionary.png"))));
+        newWindow.setScene(secondScene);
+        newWindow.initModality(Modality.WINDOW_MODAL);
+        newWindow.initOwner(DictionaryApplication.primaryStage);
+        newWindow.setX(DictionaryApplication.primaryStage.getX() + 200);
+        newWindow.setY(DictionaryApplication.primaryStage.getY() + 100);
+        newWindow.show();
+    }
+
+    @FXML
+    private void removeButtonClicked() throws IOException {
+        if (word == null) return;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Remove.fxml"));
+        Parent root = fxmlLoader.load();
+        RemoveController removeController = fxmlLoader.getController();
+        Scene secondScene = new Scene(root);
+        Stage newWindow = new Stage();
+        removeController.stage = newWindow;
+        newWindow.setTitle("Remove");
+        newWindow.getIcons().add(new Image(Objects.requireNonNull(DictionaryApplication.class.getResourceAsStream("remove.png"))));
+        newWindow.setScene(secondScene);
+        newWindow.initModality(Modality.WINDOW_MODAL);
+        newWindow.initOwner(DictionaryApplication.primaryStage);
+        newWindow.setX(DictionaryApplication.primaryStage.getX() + 200);
+        newWindow.setY(DictionaryApplication.primaryStage.getY() + 100);
+        newWindow.show();
+        newWindow.setResizable(false);
+
+//        while (true) {
+//            if (removeController.cancel) {
+//                newWindow.close();
+//                return;
+//            } else if (removeController.remove) {
+//                int[] arr = DictionaryCommandline.dictionarySearcher(dict, word.getWordTarget());
+//                dict.remove(arr[0]);
+//                searchButtonClicked();
+//            }
+//        }
+
     }
 
     @FXML
@@ -151,9 +179,9 @@ public class DictionaryController implements Initializable {
 
     @FXML
     void translate() {
-        String input = wordTranslateInput.getText();
-        String output = Translator.translate("en", "vi", input);
-        wordTranslateOutput.setText(output);
+//        String input = wordTranslateInput.getText();
+//        String output = Translator.translate("en", "vi", input);
+//        wordTranslateOutput.setText(output);
     }
 
     @Override

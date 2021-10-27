@@ -24,11 +24,6 @@
     -fx-background-color: #333333;
 }
 
-.add-remove-button{
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 30;
-}
-
 .search-bar{
     -fx-background-color: #252525;
 }
@@ -92,4 +87,10 @@
     -fx-alignment: CENTER;
     -fx-text-fill: white;
 }
+
+.text-area .content {
+    -fx-background-color:  #333333,  #333333,  #333333,  #333333;
+}
+
+
 
