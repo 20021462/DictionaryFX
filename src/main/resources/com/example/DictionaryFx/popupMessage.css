@@ -1,0 +1,45 @@
+.background {
+    -fx-background-color: #333333;
+}
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #515151;
+}
+
+.button{
+    -fx-background-color: WHITE;
+    -fx-font-size: 12;
+    -fx-text-fill: BLACK;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.remove-button {
+    -fx-background-color: #DA4453;
+    -fx-text-fill: WHITE;
+}
+
+.text-field-input {
+    -fx-background-color: #333333;
+    -fx-border-color: #515151;
+    -fx-text-fill:  #B9B9B9;
+}
+
+.text-area-input {
+    -fx-text-fill: #B9B9B9;
+    -fx-control-inner-background: #333333;
+    -fx-background-color: transparent;
+    -fx-border-color: #515151;
+    -fx-background-radius: 0;
+
+}
+
+.text-area .content {
+    -fx-background-color:  #333333,  #333333,  #333333,  #333333;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}

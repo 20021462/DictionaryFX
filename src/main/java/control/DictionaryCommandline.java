@@ -62,10 +62,10 @@ public class DictionaryCommandline {
                 break;
             }
         }
-        if (right - left + 1 > 100) {
-            right = left + 100 - 1;
+        if (right - left + 1 > 20) {
+            right = left + 20 - 1;
         } else {
-            while (right - left < 100 && right < dict.getWords().size() - 1) {
+            while (right - left < 20 && right < dict.getWords().size() - 1) {
                 String compareWord = dict.getWords().get(++right).getWordTarget();
                 if (compareSubString(wordFind, compareWord) != 0) {
                     right--;
