@@ -69,13 +69,21 @@ public class DictionaryController implements Initializable {
     }
 
     @FXML
-    private void addButtonClicked() {
-//        String wordTarget = wordTargetInput.getText();
-//        String wordSound = wordSoundInput.getText();
-//        String wordExplain = wordExplainInput.getText();
-//        if (wordTarget.equals("")) return;
-//        dict.add(wordTarget, wordSound, wordExplain);
-//        searchButtonClicked();
+    private void addButtonClicked() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Add.fxml"));
+        Parent root = fxmlLoader.load();
+        AddController addController = fxmlLoader.getController();
+        Scene secondScene = new Scene(root);
+        Stage newWindow = new Stage();
+        addController.stage = newWindow;
+        newWindow.setTitle("Add");
+        newWindow.getIcons().add(new Image(Objects.requireNonNull(DictionaryApplication.class.getResourceAsStream("dictionary.png"))));
+        newWindow.setScene(secondScene);
+        newWindow.initModality(Modality.WINDOW_MODAL);
+        newWindow.initOwner(DictionaryApplication.primaryStage);
+        newWindow.setX(DictionaryApplication.primaryStage.getX() + 200);
+        newWindow.setY(DictionaryApplication.primaryStage.getY() + 100);
+        newWindow.show();
     }
 
     @FXML

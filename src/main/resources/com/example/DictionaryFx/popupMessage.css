@@ -25,6 +25,7 @@
     -fx-background-color: #333333;
     -fx-border-color: #515151;
     -fx-text-fill:  #B9B9B9;
+    -fx-prompt-text-fill: #515151;
 }
 
 .text-area-input {
@@ -33,7 +34,7 @@
     -fx-background-color: transparent;
     -fx-border-color: #515151;
     -fx-background-radius: 0;
-
+    -fx-prompt-text-fill: #515151;
 }
 
 .text-area .content {

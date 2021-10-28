@@ -7,13 +7,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Word;
 
+import java.util.Locale;
+
 import static com.example.DictionaryFx.DictionaryApplication.mainController;
 import static com.example.DictionaryFx.DictionaryController.dict;
+import static com.example.DictionaryFx.DictionaryController.wordNumber;
 
-public class EditController {
-    private Word word;
-    private int wordNumber;
-
+public class AddController {
     public Stage stage;
 
     @FXML
@@ -31,37 +31,31 @@ public class EditController {
     }
 
     @FXML
-    private void editButtonClicked() {
-        boolean edit = true;
+    private void addButtonClicked() {
+        boolean add = true;
         int tmp = DictionaryCommandline.dictionarySearcher(dict, wordTarget.getText().toLowerCase())[0];
         if (wordTarget.getText().equals("")
-                || tmp >= 0 && tmp != wordNumber ) {
+                || tmp >= 0 && wordTarget.getText().toLowerCase().equals(dict.getWords().get(tmp))) {
             wordTarget.setStyle("-fx-border-color: #FF2B30");
-            edit = false;
+            add = false;
         }
         if (wordSound.getText().equals("")) {
             wordSound.setStyle("-fx-border-color: #FF2B30");
-            edit = false;
+            add = false;
         }
         if (wordExplain.getText().equals("")) {
             wordExplain.setStyle("-fx-border-color: #FF2B30");
-            edit = false;
+            add = false;
         }
-        if (!edit) return;
+        if (!add) return;
         Word newWord = new Word(wordTarget.getText().toLowerCase(), wordSound.getText(), wordExplain.getText());
         DictionaryController.word = newWord;
-        dict.getWords().set(wordNumber, newWord);
+        dict.add(wordTarget.getText().toLowerCase(), wordSound.getText(), wordExplain.getText());
+        wordNumber = dict.sort(dict.getWords().size() - 1);
+        System.out.println(wordNumber);
         mainController.setChosenWord(newWord);
         mainController.searchButtonClicked();
-        dict.sort(wordNumber);
         stage.close();
     }
 
-    public void setWordEdit(Word word, int wordNumber) {
-        this.wordNumber = wordNumber;
-        this.word = word;
-        wordExplain.setText(word.getWordExplain());
-        wordSound.setText(word.getWordSound());
-        wordTarget.setText(word.getWordTarget());
-    }
 }
