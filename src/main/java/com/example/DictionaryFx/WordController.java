@@ -4,9 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.Word;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-
 public class WordController {
     private Word word;
     private MyListener myListener;

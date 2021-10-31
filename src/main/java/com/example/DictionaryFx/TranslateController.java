@@ -1,6 +1,5 @@
 package com.example.DictionaryFx;
 
-import control.DictionaryCommandline;
 import control.Translator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,13 +7,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import model.Word;
-
-import java.util.Locale;
-
-import static com.example.DictionaryFx.DictionaryApplication.mainController;
-import static com.example.DictionaryFx.DictionaryController.dict;
-import static com.example.DictionaryFx.DictionaryController.wordNumber;
 
 public class TranslateController {
     public Stage stage;
@@ -48,6 +40,8 @@ public class TranslateController {
     @FXML
     private void changeButtonClicked(MouseEvent mouseEvent) {
         enToVi=!enToVi;
+        wordTranslateInput.setText("");
+        wordTranslateOutput.setText("");
         String a= langFrom.getText();
         langFrom.setText(langTo.getText());
         langTo.setText(a);

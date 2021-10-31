@@ -10,14 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44e51cb5-501f-40fc-af4c-e4e0c9ebe342" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/TranslateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Translate.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryFX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/DictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Dictionary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Dictionary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/AddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/AddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/TranslateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/TranslateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Translate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Translate.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +176,7 @@
       <workItem from="1635441492936" duration="676000" />
       <workItem from="1635446038879" duration="3397000" />
       <workItem from="1635667179879" duration="2645000" />
-      <workItem from="1635673568032" duration="5801000" />
+      <workItem from="1635673568032" duration="6478000" />
     </task>
     <servers />
   </component>

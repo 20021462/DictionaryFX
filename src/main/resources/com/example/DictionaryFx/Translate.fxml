@@ -32,12 +32,12 @@
                 </TextField>
                 <HBox alignment="CENTER_RIGHT" fillHeight="false" prefWidth="592.0" VBox.vgrow="NEVER">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#changeButtonClicked" prefHeight="25.0" prefWidth="116.0" styleClass="button" stylesheets="@style.css" text="Change Language" textFill="WHITE">
+                        <Button mnemonicParsing="false" onMouseClicked="#changeButtonClicked" prefHeight="25.0" prefWidth="80.0" styleClass="button" stylesheets="@style.css" text="Swap" textFill="WHITE">
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#translateButtonClicked" prefHeight="25.0" prefWidth="81.0" styleClass="button" stylesheets="@style.css" text="Translate" textFill="WHITE">
+                  <Button mnemonicParsing="false" onMouseClicked="#translateButtonClicked" prefHeight="25.0" prefWidth="80.0" styleClass="button" stylesheets="@style.css" text="Translate" textFill="WHITE">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -55,7 +55,7 @@
                         <Insets left="20.0" />
                     </VBox.margin>
                 </Label>
-                <TextArea fx:id="wordTranslateOutput" prefHeight="226.0" prefWidth="550.0" promptText="translation will result here" styleClass="text-area-input" stylesheets="@popupMessage.css">
+                <TextArea fx:id="wordTranslateOutput" editable="false" prefHeight="226.0" prefWidth="550.0" promptText="translation will result here" styleClass="text-area-input" stylesheets="@popupMessage.css">
                     <VBox.margin>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                     </VBox.margin>

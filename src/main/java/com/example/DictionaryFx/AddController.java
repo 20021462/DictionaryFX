@@ -7,8 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Word;
 
-import java.util.Locale;
-
 import static com.example.DictionaryFx.DictionaryApplication.mainController;
 import static com.example.DictionaryFx.DictionaryController.dict;
 import static com.example.DictionaryFx.DictionaryController.wordNumber;
