@@ -10,14 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44e51cb5-501f-40fc-af4c-e4e0c9ebe342" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/AddController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Add.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryFX.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/TranslateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Translate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryFX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/DictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DictionaryFx/EditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Edit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/popupMessage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/popupMessage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Dictionary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx/Dictionary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -58,8 +58,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/example/DictionaryFx" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-17.0.1/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -81,7 +85,7 @@
     <configuration name="DictionaryApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.DictionaryFx.DictionaryApplication" />
       <module name="DictionaryFX" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-17.0.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.web" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-17.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.web" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="model.*" />
@@ -123,6 +127,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DictionaryApplication" />
+      <item itemvalue="Application.DictionaryController" />
+      <item itemvalue="Application.Main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -169,6 +178,8 @@
       <workItem from="1635328391626" duration="1241000" />
       <workItem from="1635441492936" duration="676000" />
       <workItem from="1635446038879" duration="3397000" />
+      <workItem from="1635667179879" duration="2645000" />
+      <workItem from="1635673568032" duration="5801000" />
     </task>
     <servers />
   </component>

@@ -79,7 +79,11 @@
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" onMouseClicked="#removeButtonClicked" prefWidth="70.0" styleClass="button" stylesheets="@style.css" text="Remove" textFill="WHITE" />
+                              <Button mnemonicParsing="false" onMouseClicked="#removeButtonClicked" prefWidth="70.0" styleClass="button" stylesheets="@style.css" text="Remove" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#translateButtonClicked" prefWidth="70.0" styleClass="button" stylesheets="@style.css" text="Translate" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefWidth="250.0">
@@ -160,7 +164,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <TextArea fx:id="chosenWordExplain" VBox.vgrow="ALWAYS">
+                  <TextArea fx:id="chosenWordExplain" editable="false" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>

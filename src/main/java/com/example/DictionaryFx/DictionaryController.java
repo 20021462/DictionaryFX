@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
@@ -128,6 +129,9 @@ public class DictionaryController implements Initializable {
 
     @FXML
     private void saveButtonClicked() {
+        for(int i=0;i<=20;i++){
+            DictionaryCommandline.showOneWords(dict,i);
+        }
         DictionaryManagement.dictionaryExportToFile("dictionary.txt", dict);
     }
 
@@ -166,6 +170,22 @@ public class DictionaryController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void translateButtonClicked(MouseEvent mouseEvent) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Translate.fxml"));
+        Parent root = fxmlLoader.load();
+        TranslateController translateController = fxmlLoader.getController();
+        Scene secondScene = new Scene(root);
+        Stage newWindow = new Stage();
+        translateController.stage = newWindow;
+        newWindow.setTitle("Translate");
+        newWindow.setScene(secondScene);
+        newWindow.initModality(Modality.WINDOW_MODAL);
+        newWindow.initOwner(DictionaryApplication.primaryStage);
+        newWindow.setX(DictionaryApplication.primaryStage.getX() + 200);
+        newWindow.setY(DictionaryApplication.primaryStage.getY() + 100);
+        newWindow.show();
+    }
 
     @FXML
     void speakWord() {
@@ -185,5 +205,6 @@ public class DictionaryController implements Initializable {
         DictionaryManagement.insertFromFile("dictionary.txt", dict);
         speakerButton.setVisible(false);
     }
+
 
 }

@@ -55,9 +55,7 @@ public class DictionaryManagement {
         if(num!=-1){
             System.out.println("Removed word \""+dict.getWords().get(num).getWordTarget() +"\" successfully");
             dict.remove(num);
-
         }
-
     }
 
 
